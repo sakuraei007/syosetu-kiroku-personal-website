@@ -1,6 +1,6 @@
-# ノベルズ（Novelz）- 小説ブックマーク管理Webアプリ
+# ノベルズ - 小説ブックマーク管理Webアプリ
 
-なろう系小説を管理するための、フルスタックWebアプリケーションです。
+主にネット小説を管理するための、フルスタックWebアプリケーションです。
 ユーザー認証・CRUD操作・検索・フィルタリング機能を備えています。
 
 ## 画面イメージ
@@ -28,6 +28,14 @@
 | ホスティング | Render |
 | バージョン管理 | Git / GitHub |
 
+## デモ
+
+ライブデモはこちら: https://syosetu-kiroku-personal-website.onrender.com
+
+デモ用アカウント：
+- ユーザーID：`demoBan`
+- パスワード：`demo123`
+  
 ## セットアップ（ローカル環境）
 
 ```bash
@@ -44,7 +52,7 @@ node server.js
 
 ブラウザで `http://localhost:3000` を開いてください。
 
-## 工夫した点・学んだこと
+## 工夫した点
 
 - 未経験からゼロベースで実装し、フルスタック開発の全工程を経験
 - `bcrypt`によるパスワードのハッシュ化など、基本的なセキュリティ対策を実装
@@ -52,17 +60,10 @@ node server.js
 - SQLの`WHERE user_id = ?`条件によるデータの権限分離を実装
 - `.gitignore`によるビルド成果物の除外など、デプロイ環境への対応を経験
 
-## デモ
-
-ライブデモはこちら：[Render デプロイURL]
-
-デモ用アカウント：
-- ユーザーID：`demoBan`
-- パスワード：`demo123`
 
 ---
 
-# Novelz - Light Novel Bookmark Manager
+# Novels - Light Novel Bookmark Manager
 
 A full-stack web application for managing light novel bookmarks, featuring user authentication, CRUD operations, search, and filtering.
 
@@ -87,6 +88,14 @@ A full-stack web application for managing light novel bookmarks, featuring user 
 | Hosting | Render |
 | Version Control | Git / GitHub |
 
+## Live Demo
+
+Live demo: https://syosetu-kiroku-personal-website.onrender.com
+
+Demo account:
+- User ID: `demoBan`
+- Password: `demo123`
+
 ## Local Setup
 
 ```bash
@@ -103,7 +112,7 @@ node server.js
 
 Open `http://localhost:3000` in your browser.
 
-## Key Learnings
+## Learnings
 
 - Built a full-stack application from scratch with no prior programming experience
 - Implemented basic security measures including bcrypt password hashing
@@ -111,10 +120,4 @@ Open `http://localhost:3000` in your browser.
 - Enforced per-user data access control using SQL `WHERE user_id = ?` conditions
 - Gained hands-on experience with deployment, including `.gitignore` configuration for production environments
 
-## Live Demo
 
-Live demo: [Render deployment URL]
-
-Demo account:
-- User ID: `demoBan`
-- Password: `demo123`
