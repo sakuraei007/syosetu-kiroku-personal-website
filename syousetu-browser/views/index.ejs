@@ -1,0 +1,135 @@
+  <!DOCTYPE html>
+  <html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>小説リスト</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  </head>
+  <link rel="stylesheet" href="/style.css">
+  <body>
+    <div class="title-login">
+      <div class="site-title">ノベルズ</div>
+      <% if (username) { %>
+        <div class="account-menu">
+          <button type="button" class="account-button"><i class="fas fa-user"></i>  <%= username %> <i class="fas fa-chevron-down"></i></button>
+          <div class="account-option">
+              <div class="acc-user2"><%= username %></div>  
+              <a href="/logout"><i class="fas fa-right-from-bracket"></i> ログアウト</a>
+            </div>
+        </div>
+      <% } else { %>
+        <a class="login-button" href="/login">ログイン</a>
+      <% } %>
+    </div>
+    <nav class="top-bar">
+      <a href="/">ブックマーク</a>
+      <a href="/edit">小説を編集</a>
+      <a href="/add">小説を追加</a>
+    </nav>
+    <div class="top-search">
+    検索
+    </div>
+    <form action="/" method="GET">
+      <div class="filters">
+      <label>検索</label>
+      <input type="text" name="q" placeholder="検索ワードを入力" value="<%= keyword || '' %>"> 
+      <br>
+      <label>除外</label>
+      <input type="text" name="exclude" placeholder="除外ワードを入力" value="<%= exclude || '' %>"> 
+      </div>
+      <div class="submit-area">
+      <button type="submit" class="submit-button">検 索</button> 
+      </div>
+      <div class="sort-div">
+      <label> 検索結果の並び替え </label><br>
+      <select name="sort">
+          <option value="new" <%= sort === 'new' ? 'selected' : '' %>>新着順</option>
+          <option value="rating" <%= sort === 'rating' ? 'selected' : '' %>>評価の高い順</option>
+      </select>
+      <div class="novel-page">
+        <% if (keyword) { %>
+        <%= keyword %><br><% 
+        } %>
+        全<%=totalNovels%>作品　<%=page%>ページ
+      </div>
+      <div class="page-index">
+      <% if (page > 1) { %>
+        <a href="/?page=<%= page - 1 %>&q=<%= keyword || '' %>&sort=<%= sort || '' %>&exclude=<%= exclude || '' %>">BACK</a>
+      <% } %>
+
+      <% for (let i = 1; i <= totalPages; i++) { %>
+        <% if (i === page) { %>
+          [-<%= i %>-]
+        <% } else { %>
+          <a href="/?page=<%= i %>&q=<%= keyword || '' %>&sort=<%= sort || '' %>&exclude=<%= exclude || '' %>">[<%= i %>]</a>
+        <% } %>
+      <% } %>
+
+      <% if (page < totalPages) { %>
+        <a href="/?page=<%= page + 1 %>&q=<%= keyword || '' %>&sort=<%= sort || '' %>&exclude=<%= exclude || '' %>">NEXT</a>
+      <% } %>
+    </div>
+      </div>
+    </form>
+    <% const showEditOption = typeof allowEdit !== 'undefined' ? allowEdit : false; %>
+    <ul class="novel-list">
+      <% novels.forEach(novel => { %>
+        <li class="novels">
+          <a class="novel-title" href="<%= novel.url %>" target="_blank"><%= novel.title %></a>
+          <% if (showEditOption) { %>
+            <div class="novel-menu">
+              <button type="button" class="edit-button">⋮</button> <div class="settei">設定</div>
+              <div class="edit-option">
+                <a href="/edit/<%= novel.id %>">内容変更</a>
+                <form action="/delete/<%= novel.id %>" method="POST" onsubmit="return confirm('「<%=novel.title%>」 のブックマークを解除します。よろしいですか？');">
+                  <button type="submit">登録解除</button>
+                </form>
+              </div>
+            </div>
+          <% } %>
+          <br>
+          <small class="status-head"><%= novel.status %> / </small>
+          <small class="rating-head">評価: <%= '★'.repeat(novel.rating) %><%= '☆'.repeat(5 - novel.rating) %></small>
+          <br>
+          <small class="keyword-head">キーワード：</small> 
+          <small class="keyword-text"><%= novel.tags %></small>
+          <br>
+          <button class="toggle-btn" onclick="toggleSummary(this)">
+            <span class="toggle-text">▼あらすじ等</span>
+            <i class="fas fa-chevron-down fa-chevron-down-sum"></i>
+          </button>
+          <p class="summary-box"><%= novel.summary %></p>
+        </li>
+      <% }) %>
+    </ul>
+    </div>
+    <script>
+      function toggleSummary(button) {
+        const summary = button.nextElementSibling;
+        if (summary.style.display === 'none' || summary.style.display === '') {
+            summary.style.display = 'block';
+        } else {
+            summary.style.display = 'none';
+        }
+      }
+    </script>
+    <div class="page-index-bottom">
+      <% if (page > 1) { %>
+        <a href="/?page=<%= page - 1 %>&q=<%= keyword || '' %>&sort=<%= sort || '' %>&exclude=<%= exclude || '' %>">BACK</a>
+      <% } %>
+
+      <% for (let i = 1; i <= totalPages; i++) { %>
+        <% if (i === page) { %>
+          [-<%= i %>-]
+        <% } else { %>
+          <a href="/?page=<%= i %>&q=<%= keyword || '' %>&sort=<%= sort || '' %>&exclude=<%= exclude || '' %>">[<%= i %>]</a>
+        <% } %>
+      <% } %>
+
+      <% if (page < totalPages) { %>
+        <a href="/?page=<%= page + 1 %>&q=<%= keyword || '' %>&sort=<%= sort || '' %>&exclude=<%= exclude || '' %>">NEXT</a>
+      <% } %>
+    </div>
+  </div>
+  </body>
+  </html>

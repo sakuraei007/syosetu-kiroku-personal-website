@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>小説を編集</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<link rel="stylesheet" href="/style.css">
+<body class="whole-add">
+  <div class="title-login">
+      <div class="site-title">ノベルズ</div>
+      <% if (username) { %>
+        <div class="account-menu">
+          <button type="button" class="account-button"><i class="fas fa-user"></i>  <%= username %> <i class="fas fa-chevron-down"></i></button>
+          <div class="account-option">
+              <div class="acc-user2"><%= username %></div>  
+              <a href="/logout"><i class="fas fa-right-from-bracket"></i> ログアウト</a>
+            </div>
+        </div>
+      <% } else { %>
+        <a class="login-button" href="/login">ログイン</a>
+      <% } %>
+    </div>
+    <nav class="add-top">
+      <a href="/">ブックマーク</a>
+      <i class="fas fa-chevron-right"></i>
+      <span>内容変更</span>
+      <div><%=novel.title%></div>
+    </nav>
+    <form class="edit-delete" action="/delete/<%= novel.id %>" method="POST" onsubmit="return confirm('「<%=novel.title%>」 のブックマークを解除します。よろしいですか？');">
+                  <button type="submit">ブックマークを解除</button>
+    </form>
+
+  <div class="edit-body">
+    <div class="add-top1">内容変更</div>
+
+    <form action="/edit/<%= novel.id %>" method="POST">
+      <div class="add-title">
+        <label>タイトル</label><br>
+        <input type="text" name="title" value="<%= novel.title %>" required>
+      </div>
+      <div class="add-URL">
+        <label>URL</label><br>
+        <input type="url" name="url" value="<%= novel.url %>" required>
+      </div>
+      <div class="add-rate">
+          <label>評価</label><br>
+          <select name="rating">
+              <option value="1" <%= novel.rating == 1 ? 'selected' : '' %>>★☆☆☆☆</option>
+              <option value="2" <%= novel.rating == 2 ? 'selected' : '' %>>★★☆☆☆</option>
+              <option value="3" <%= novel.rating == 3 ? 'selected' : '' %>>★★★☆☆</option>
+              <option value="4" <%= novel.rating == 4 ? 'selected' : '' %>>★★★★☆</option>
+              <option value="5" <%= novel.rating == 5 ? 'selected' : '' %>>★★★★★</option>
+          </select>
+      </div>
+      <div class="add-stat">
+          <label>ステータス</label><br>
+          <select name="status">
+            <option value="完結済" <%= novel.status === '完結済' ? 'selected' : '' %>>完結済</option>
+            <option value="連載中" <%= novel.status === '連載中' ? 'selected' : '' %>>連載中</option>
+          </select>
+      </div>
+      <div class="add-tag">
+        <label>タグ（半角スペース区切り）</label><br>
+        <input type="text" name="tags" value="<%= novel.tags %>">
+      </div>
+      <div class="add-gaiyou">
+        <label>概要</label><br>
+        <textarea name="summary"><%= novel.summary %></textarea>
+      </div>
+      <div class="add-save">
+        <a href="/">ブックマークTOPに戻る</a>
+        <button type="submit">内容を保存[実行]</button>
+      </div>
+    </form>
+
+  </div> 
+</body>
+</html>

@@ -1,0 +1,814 @@
+html, body, a {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Yu Gothic", "Meiryo", "Noto Sans JP", sans-serif;
+  background-color: #ffffff;
+  color: #333333;
+}
+
+.title-login {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0rem 1rem;
+  background-color: white;
+}
+
+.login-button {
+  color:#2a96c5;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-decoration: none;
+  border: 1px solid #47b6e5;
+  padding: 0.6rem 0.4rem;
+  background-color: #c5e8f6;
+}
+
+.top-bar {
+  border-top: 1px solid #47b6e5;
+  display: flex;
+}
+
+.top-bar a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: #333;
+}
+
+.top-bar a + a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 50%;
+  width: 1px;
+  background: #ccc;
+}
+
+.top-search {
+  background-color: rgb(231, 231, 231); 
+  font-size: 1rem;
+  font-weight: 700;
+  border-bottom: 1px dotted #333333;
+  border-top: 1px solid #47b6e5;
+  padding: 0.3rem 0.3rem;
+}
+
+.filters {
+  background-color: rgb(242, 242, 242);
+  padding: 0.7rem 0 0.7rem 1.0rem ;
+  
+}
+
+.filters label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: rgb(92, 92, 92);
+  display: inline-block;
+  width: 2rem;    
+  margin-right: 0.3rem;  
+}
+
+.filters input {
+  width: calc(90% - 8rem);
+  margin-bottom: 0.3rem;      
+  padding: 0.2rem;
+  box-sizing: border-box;
+  border-radius: 0.3rem;
+}
+
+.submit-area {
+    padding: 0.3rem 0;
+    background-color:rgb(242, 242, 242);
+}
+.submit-button {
+    display: block;
+    background-color: #65C7EC;
+    color: white;
+    border-radius: 0.3rem;
+    font-size: 0.8rem;
+    width: 300px;
+    margin: 0.5rem auto;
+}
+
+.sort-div label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 1rem;
+  color: rgb(92, 92, 92);
+}
+
+.sort-div select {
+  margin-left: 1rem;
+  width: 350px;
+}
+
+.novel-page {
+  margin-top: 2rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding-left: 0.4rem;
+   
+}
+
+.page-index {
+  font-size: 0.8rem;
+  text-align: center;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #00cad1;
+}
+
+.page-index a {
+  text-decoration: none;
+  color:#0b69a4;
+
+}
+
+.novels {
+  position: relative;
+  padding: 0.3rem 0;
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #00cad1;
+}
+
+.novel-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-bottom: #00cad1;
+}
+
+.novel-list li {
+  padding-left: 0.4rem;
+}
+
+.novel-list li > p {
+  display: none;
+  margin-top: 0.5rem;
+}
+
+.novel-title {
+  text-decoration: none;
+  color: #0061a7;
+  font-weight: 700;
+}
+
+.rating-head {
+  color: rgb(220, 53, 53);
+}
+
+.status-head {
+  color: #333333;
+  font-size: 0.8rem;
+}
+
+.keyword-head {
+  color: rgb(74, 74, 74);
+  font-weight: 500;
+  font-size: 0.85rem;
+}
+.keyword-text {
+  color:#0061a7;
+  font-size: 0.8rem;
+  font-weight: 580;
+}
+
+.toggle-btn {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background-color: #e0ecf5;
+  color: rgb(74, 74, 74);
+  border-radius: 0.3rem;
+  font-size: 0.8rem;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  text-align: left;
+
+  color:#333333;
+}
+
+.fa-chevron-down-sum {
+  color: rgb(134, 134, 134) !important;
+  font-size: 0.8rem !important;
+}
+
+.summary-box {
+  border: 2px dotted #97bbbf;
+  font-size: 0.8rem;
+  color:#333333;
+  padding: 6px 6px;
+
+}
+
+.toggle-btn p {
+  background-color: #333333;
+}
+
+.page-index-bottom {
+  font-size: 0.8rem;
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid plum;
+  
+}
+
+.page-index-bottom a {
+  text-decoration: none;
+  color:#0b69a4;
+}
+
+/*ーーーーーーーーーーーーーーーーーーーー垢ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー*/
+.account-menu {
+ position: relative;
+ display: inline-block;
+}
+.account-button {
+  background-color: white;
+  color: #3b82f6; 
+  border: none;
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.account-button:hover {
+  background-color: #e9eaec;
+}
+
+
+.fa-chevron-down {
+  color: #9fbdee;
+  font-size: 0.8rem;
+}
+
+.account-option {
+  display: none; 
+  position: absolute;
+  top: 100%;
+  right: 0;  
+  background-color: white;
+  min-width: 220px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);  
+  border: 1px solid #e0e0e0;
+  z-index: 100; 
+}
+
+.account-menu:hover .account-option {
+  display: block;
+}
+
+.acc-user2 {
+  border-bottom: 1px solid #f0f0f0; 
+  padding: 0.75rem 1rem;
+  color:lightslategray;
+  font-size: 0.9rem;
+
+}
+.account-option a {
+  display: block;
+  padding: 1rem;
+  text-decoration: none;
+  color: #3b82f6; 
+  font-size: 0.9rem;
+}
+
+.account-option a:hover {
+  background-color: #f9f9f9;
+}
+
+.account-option a i {
+  margin-right: 0.5rem;  
+}
+/* ----------------------------------------- ログイン----------------------------------------------------*/
+.site-title {
+  padding: 1rem;
+}
+
+.login-cont {
+  max-width: 500px;
+  margin: 0rem auto;
+}
+
+.login-head {
+  color:#185873;
+  font-weight: 700;
+  font-size: 1.3rem;
+  padding: 0.6rem 0.4rem;
+  background-color: rgb(242, 242, 242);
+}
+
+.login-body {
+  background-color: rgb(242, 242, 242);
+}
+
+.login-box {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 1rem 0rem 0rem;
+  background: #ffffff;
+  border: 1px solid #d8e6ef;
+  border-radius: 14px;
+  border-top: 2.5px solid #5fe5e7;
+  border-bottom: 2.5px solid #5fe5e7;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+}
+
+
+.login-username-head {
+  color:#333333;
+  font-weight: 550;
+  font-size: 1rem;
+  padding-left: 1rem;
+}
+
+.login-username-box {
+  border: 2px solid #5fe5e7;
+  border-radius: 0.2rem;
+  padding-bottom: 0.5rem;
+  width: 92%;
+  margin-left: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.login-pw-head {
+  color:#333333;
+  font-weight: 550;
+  font-size: 1rem;
+  padding-left: 1rem;
+}
+
+.login-pw-box {
+  border: 2px solid #5fe5e7;
+  border-radius: 0.2rem;
+  padding-bottom: 0.5rem;
+  width: 92%;
+  margin-left: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.tyuii-gaki {
+  font-size: 0.8rem;
+  color: grey;
+  margin: 1rem;
+}
+
+.lg-login-button {
+  color:#2a96c5;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-decoration: none;
+  border: 1px solid #47b6e5;
+  padding: 0.8rem 0.4rem;
+  background-color: #c5e8f6;
+  display: block;
+  width: 200px;
+  margin: 0 auto;
+  margin-top: 2rem;
+}
+
+
+.divider {
+  border-top: 1px solid #e0e0e0; 
+  margin: 2rem 0 1.5rem 0;  
+  width: 100%;  
+}
+
+.to-register {
+  color:#f48fb1;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-decoration: none;
+  border: 1px solid #f48fb1;
+  padding: 0.8rem 0;
+  background-color: rgb(253, 214, 220);
+  display: block;
+  width: 200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.error-cont {
+  min-height: 3rem; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+}
+
+.form-error {
+  background: #fff0f0;
+  border: 1px solid #f4c2c2;
+  color: #b00020;
+  padding: 0.6rem;
+  margin: 0 1rem; 
+  border-radius: 6px;
+  text-align: center;
+}
+
+/*------------------------------------------新規登録ーーーーーーーーーーーーーーーーーーーーーーーーーーー*/
+
+.reg-cont {
+  max-width: 500px;
+  margin: 0rem auto;
+}
+
+.register-head {
+  color:#185873;
+  font-weight: 700;
+  font-size: 1.3rem;
+  padding: 0.6rem 0.4rem;
+  background-color: rgb(242, 242, 242);
+}
+
+.reg-body {
+  background-color: rgb(242, 242, 242);
+}
+
+.reg-box {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 1rem 0rem 0rem;
+  background: #ffffff;
+  border: 1px solid #d8e6ef;
+  border-radius: 14px;
+  border-top: 2.5px solid #ffc3ff;
+  border-bottom: 2.5px solid #ffc3ff;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+}
+
+
+.reg-username-head {
+  color:#333333;
+  font-weight: 550;
+  font-size: 1rem;
+  padding-left: 1rem;
+}
+
+.reg-username-box {
+  border: 2px solid #ffc3ff;
+  border-radius: 0.2rem;
+  padding-bottom: 0.5rem;
+  width: 92%;
+  margin-left: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.reg-pw-head {
+  color:#333333;
+  font-weight: 550;
+  font-size: 1rem;
+  padding-left: 1rem;
+}
+
+.reg-pw-box {
+  border: 2px solid #ffc3ff;
+  border-radius: 0.2rem;
+  padding-bottom: 0.5rem;
+  width: 92%;
+  margin-left: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.reg-button {
+  color:#f48fb1;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-decoration: none;
+  border: 1px solid #f48fb1;
+  padding: 0.8rem 0.4rem;
+  background-color: rgb(253, 214, 220);
+  display: block;
+  width: 200px;
+  margin: 0 auto;
+  margin-top: 2rem;
+}
+
+.tyuii-gaki1 {
+  padding-top: 4rem;
+  font-size: 0.8rem;
+  color: grey;
+  margin: 1rem;
+}
+
+.divider {
+  border-top: 1px solid #e0e0e0; 
+  margin: 2rem 0 1.5rem 0;  
+  width: 100%;  
+}
+
+.tyuii-gaki2 {
+  font-size: 0.8rem;
+  color: grey;
+  margin: 1rem;
+}
+
+.to-login {
+  color:#2a96c5;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-decoration: none;
+  border: 1px solid #47b6e5;
+  padding: 0.8rem 0;
+  background-color: #c5e8f6;
+  display: block;
+  width: 200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.req {
+  padding: 0 0.3rem;
+  margin-left: 0.3rem;
+  color: rgb(255, 42, 19);
+  font-weight: 600;
+  font-size: 0.75rem;
+  border: 1px solid rgb(255, 42, 19);
+  border-radius: 0.3rem;
+}
+
+/*---------------------------------------------編集画面ーーーーーーーーーーーーーーーーーーーーーーーーーーーーー*/
+.novel-menu {
+  position: absolute;  
+  right: 1rem;         
+  top: 1rem;          
+  display: inline-block;
+}
+
+.settei {
+  display: inline;
+  color: rgb(103, 103, 103);
+  font-weight: 580;
+  font-size: 15px;
+  right: 0.5rem;
+}
+
+.edit-button {
+  background: none;
+  border: none;
+  font-size: 15px;
+  color: rgb(103, 103, 103);
+  font-weight: 580;
+  cursor: pointer;
+}
+
+.edit-option {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); 
+  z-index: 10;
+  min-width: 140px; 
+}
+
+.novel-menu:hover .edit-option {
+  display: block;
+}
+
+.edit-option a,
+.edit-option button {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.8rem 1rem;  
+  text-align: center;    
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.edit-option a {
+  color: #333333;
+  border-bottom: 1px solid #eaeaea;  
+}
+
+.edit-option button {
+  color: rgb(233, 73, 73);
+}
+
+.edit-option a:hover,
+.edit-option button:hover {
+  background-color: #f9f9f9;
+}
+
+/*ーーーーーーーーーーーーーーーーーーーーーーーーーー追加ーーーーーーーーーーーーーーーーーーーーーーーーーーーーー*/
+
+.whole-add {
+  background-color: rgb(247, 247, 247); 
+}
+
+.top-bar {
+  border-top: 1px solid #e5e5e5;
+  display: flex;
+}
+
+.add-body {
+  background-color: white;
+  max-width: 700px;
+  margin: 2rem auto;
+  background: #ffffff;
+  border: 1px solid #d8e6ef;
+  border-radius: 4px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+}
+
+.add-top {
+  display: block;  
+  max-width: 700px;
+  font-size: 1rem;
+  font-weight: 700;
+  border-top: 1px solid #e5e5e5;
+  padding: 0.3rem 0.3rem;
+  margin: 0 auto;
+}
+
+.add-top a {
+  color: #9c9c9c;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.8rem;
+}
+
+.add-top a:hover {
+  color:#333333;
+  text-decoration: underline;
+}
+
+.fa-chevron-right {
+  font-size: 0.7rem !important;
+  color: #d5d5d5 !important;
+}
+
+.add-top span {
+  font-size: 0.8rem;
+  font-weight: 550;
+}
+
+.add-top1 {
+  font-size: 1rem;
+  font-weight:600;
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid #d8d8d8;
+}
+
+.add-title {
+  padding: 0.5rem 0.5rem;
+}
+
+.add-title label, .add-URL label, .add-rate label, .add-stat label, .add-tag label, .add-gaiyou label {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.add-URL, .add-gaiyou {
+  padding: 0rem 0.5rem;
+}
+
+.add-title input, .add-URL input, .add-tag input{
+  justify-content: space-between;
+  width: 70%;
+  border: 2px solid #aae0e6;
+  border-radius: 3px;
+}
+
+.add-rate, .add-tag {
+  padding: 0.5rem 0.5rem;
+}
+
+.add-stat select, .add-rate select {
+  justify-content: space-between;
+  width: 15%;
+  border: 2px solid #aae0e6;
+  border-radius: 3px;
+}
+
+.add-rate select option {
+  color: rgb(220, 53, 53);
+}
+
+.add-stat {
+  padding: 0rem 0.5rem;
+}
+
+.add-gaiyou textarea {
+  resize: none;
+  width: 100%;
+  padding: 0.5rem;
+  border: 2px solid #aae0e6;
+  border-radius: 3px;
+  box-sizing: border-box;
+  min-height: 55px;   
+}
+
+.add-title input:focus,
+.add-URL input:focus,
+.add-tag input:focus,
+.add-gaiyou textarea:focus,
+.add-rate select:focus,
+.add-stat select:focus {
+  outline: 2px solid #bbe7ec;
+
+}
+
+.add-save {
+  display:flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.add-save a,
+.add-save button {
+  flex: 0 1 auto;
+  width: 200px;
+  padding: 0.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  border-radius: 3px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  border: 1px solid #cdcdcd;
+  box-sizing: border-box;
+}
+
+.add-save a {
+  color: #2a96c5;
+  background-color: rgb(253, 253, 253);
+  text-decoration: none;
+}
+
+.add-save button {
+  color: #2a96c5;
+  background-color: #c5e8f6;
+  border-color: #47b6e5;
+}
+
+.add-save a:hover,
+.add-save button:hover {
+    outline: 3px solid #ececec;
+}
+
+/*ーーーーーーーーーーーーーーーーーーーーーーーーーーー編集画面ーーーーーーーーーーーーーーーーーーーーーーーー*/
+
+.add-top div {
+  margin-top: 1rem;
+  color:#165e7d;
+  font-weight: 500;
+}
+
+.edit-delete {
+  max-width: 700px;
+  display: flex;
+  margin: 0 auto;  
+  display: flex;
+  justify-content: flex-end;  
+}
+
+.edit-delete button{
+  color: rgb(233, 73, 73);
+}
+
+.edit-delete button {
+  display: block;
+  box-sizing: border-box;
+  padding: 0.5rem 1rem;  
+  text-align: center;    
+  text-decoration: none;
+  font-size: 0.8rem;
+  background: white;
+  border: 1px solid #ececec;
+  border-radius: 2px;
+}
+
+.edit-delete button:hover {
+  outline: 3px solid #ececec;
+}
+
+.edit-body {
+  background-color: white;
+  max-width: 700px;
+  margin: 1rem auto;
+  background: #ffffff;
+  border: 1px solid #d8e6ef;
+  border-radius: 4px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+}
+

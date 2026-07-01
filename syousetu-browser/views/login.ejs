@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>ログイン</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body class="login-body">
+    <div class="site-title">ノベルズ</div>
+    <div class="login-cont">
+    <div class="login-head">ログイン</div>
+    <div class="login-box">
+
+        <form action="/login" method="POST">
+            <div>
+                <label class="login-username-head">ユーザID</label><br>
+                <input class="login-username-box" type="text" name="username" required>
+            </div>
+            <div>
+                <label class="login-pw-head">パスワード</label><br>
+                <input class="login-pw-box" type="password" name="password" required>
+            </div>
+            <div class="error-cont">
+            <% if (typeof error !== 'undefined' && error) { %>
+            <div class="form-error"><%= error %></div>
+            <% } %>
+            </div>
+            <p class="tyuii-gaki">公共の端末や共有のパソコンではログイン情報を入力したままにせず、使用後は必ずログアウトしてください。
+  また、パスワードは他人と共有せず、安全に管理してください。<br><br>※デモ版をお試しになりたい方は、以下のテストアカウントをご利用ください。<br>
+        ユーザーID： demoBan <br> パスワード： demo123</p>
+            <button class="lg-login-button" type="submit">ログイン</button>
+        </form>
+        <div class="divider"></div>
+        <p class="above-regbtn"><a class="to-register"href="/register">新規ユーザー登録</a></p>
+    </div>
+</div>
+</body>
+</html>

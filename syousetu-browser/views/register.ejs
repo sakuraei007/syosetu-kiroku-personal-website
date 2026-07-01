@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>新規登録</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body class="reg-body">
+    <div class="site-title">ノベルズ</div>
+    <div class="reg-cont">
+    <div class="register-head">ユーザー登録</div>
+    <div class="reg-box">
+
+    <form action="/register" method="POST">
+        <div>
+            <label class="reg-username-head">ユーザネーム</label><span class="req">必須</span><br>
+            <input class="reg-username-box" type="text" name="username" required>
+        </div>
+        <div>
+            <label class="reg-pw-head">パスワード</label><span class="req">必須</span><br>
+            <input class="reg-pw-box" type="password" name="password" required>
+        </div>
+        <div class="error-cont">
+            <% if (typeof error !== 'undefined' && error) { %>
+            <div class="form-error"><%= error %></div>
+            <% } %>
+        </div>
+        <p class="tyuii-gaki1">お一人様につき1アカウントのみ作成可能です。一人による複数アカウントの取得を禁止しています。
+            </p>
+        <button class="reg-button" type="submit">新規ユーザー登録</button>
+    </form>
+    <div class="divider"></div>
+    <p class="tyuii-gaki2">すでにアカウントをお持ちの方は、こちらからログインしてください</p>
+    <p><a class="to-login"href="/login">ログイン</a></p>
+    </div>
+</div>
+</body>
+</html>
