@@ -28,6 +28,14 @@
 | ホスティング | Render |
 | バージョン管理 | Git / GitHub |
 
+## デモ
+
+ライブデモはこちら: https://syosetu-kiroku-personal-website.onrender.com
+
+デモ用アカウント：
+- ユーザーID：`demoBan`
+- パスワード：`demo123`
+  
 ## セットアップ（ローカル環境）
 
 ```bash
@@ -52,13 +60,6 @@ node server.js
 - SQLの`WHERE user_id = ?`条件によるデータの権限分離を実装
 - `.gitignore`によるビルド成果物の除外など、デプロイ環境への対応を経験
 
-## デモ
-
-ライブデモはこちら: https://syosetu-kiroku-personal-website.onrender.com
-
-デモ用アカウント：
-- ユーザーID：`demoBan`
-- パスワード：`demo123`
 
 ---
 
@@ -87,6 +88,14 @@ A full-stack web application for managing light novel bookmarks, featuring user 
 | Hosting | Render |
 | Version Control | Git / GitHub |
 
+## Live Demo
+
+Live demo: https://syosetu-kiroku-personal-website.onrender.com
+
+Demo account:
+- User ID: `demoBan`
+- Password: `demo123`
+
 ## Local Setup
 
 ```bash
@@ -111,10 +120,4 @@ Open `http://localhost:3000` in your browser.
 - Enforced per-user data access control using SQL `WHERE user_id = ?` conditions
 - Gained hands-on experience with deployment, including `.gitignore` configuration for production environments
 
-## Live Demo
 
-Live demo: https://syosetu-kiroku-personal-website.onrender.com
-
-Demo account:
-- User ID: `demoBan`
-- Password: `demo123`
