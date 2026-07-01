@@ -1,6 +1,6 @@
-# ノベルズ（Novelz）- 小説ブックマーク管理Webアプリ
+# ノベルズ - 小説ブックマーク管理Webアプリ
 
-なろう系小説を管理するための、フルスタックWebアプリケーションです。
+主にネット小説を管理するための、フルスタックWebアプリケーションです。
 ユーザー認証・CRUD操作・検索・フィルタリング機能を備えています。
 
 ## 画面イメージ
@@ -44,7 +44,7 @@ node server.js
 
 ブラウザで `http://localhost:3000` を開いてください。
 
-## 工夫した点・学んだこと
+## 工夫した点
 
 - 未経験からゼロベースで実装し、フルスタック開発の全工程を経験
 - `bcrypt`によるパスワードのハッシュ化など、基本的なセキュリティ対策を実装
@@ -54,7 +54,7 @@ node server.js
 
 ## デモ
 
-ライブデモはこちら：[Render デプロイURL]
+ライブデモはこちら: https://syosetu-kiroku-personal-website.onrender.com
 
 デモ用アカウント：
 - ユーザーID：`demoBan`
@@ -62,7 +62,7 @@ node server.js
 
 ---
 
-# Novelz - Light Novel Bookmark Manager
+# Novels - Light Novel Bookmark Manager
 
 A full-stack web application for managing light novel bookmarks, featuring user authentication, CRUD operations, search, and filtering.
 
@@ -103,7 +103,7 @@ node server.js
 
 Open `http://localhost:3000` in your browser.
 
-## Key Learnings
+## Learnings
 
 - Built a full-stack application from scratch with no prior programming experience
 - Implemented basic security measures including bcrypt password hashing
@@ -113,7 +113,7 @@ Open `http://localhost:3000` in your browser.
 
 ## Live Demo
 
-Live demo: [Render deployment URL]
+Live demo: https://syosetu-kiroku-personal-website.onrender.com
 
 Demo account:
 - User ID: `demoBan`
