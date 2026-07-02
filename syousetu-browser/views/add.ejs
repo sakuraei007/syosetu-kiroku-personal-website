@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="/style.css">
 <body class="whole-add">
   <div class="title-login">
-      <div class="site-title">ノベルズ</div>
+      <div class="site-title">マイノベルズ</div>
       <% if (username) { %>
         <div class="account-menu">
           <button type="button" class="account-button"><i class="fas fa-user"></i>  <%= username %> <i class="fas fa-chevron-down"></i></button>
@@ -37,7 +37,7 @@
       </div>
       <div class="add-URL">
         <label>URL</label><br>
-        <input type="url" name="url" required>
+        <input type="url" name="url" required placeholder="https://">
       </div>
       <div class="add-rate">
           <label>評価</label><br>

@@ -90,6 +90,7 @@ body {
     padding: 0.3rem 0;
     background-color:rgb(242, 242, 242);
 }
+
 .submit-button {
     display: block;
     background-color: #65C7EC;
@@ -98,6 +99,10 @@ body {
     font-size: 0.8rem;
     width: 300px;
     margin: 0.5rem auto;
+}
+
+.submit-button:hover {
+  cursor:pointer;
 }
 
 .sort-div label {
@@ -359,6 +364,11 @@ body {
   margin-bottom: 0.5rem;
 }
 
+.login-username-box:focus,
+.login-pw-box:focus {
+  outline: 2px solid #71d1d3;
+}
+
 .tyuii-gaki {
   font-size: 0.8rem;
   color: grey;
@@ -398,6 +408,10 @@ body {
   width: 200px;
   margin: 0 auto;
   text-align: center;
+}
+
+.lg-login-button:hover,.to-register:hover {
+  outline: 3px solid #ececec;
 }
 
 .error-cont {
@@ -481,6 +495,11 @@ body {
   margin-bottom: 0.5rem;
 }
 
+.reg-username-box:focus,
+.reg-pw-box:focus {
+  outline: 2px solid #deb5de;
+}
+
 .reg-button {
   color:#f48fb1;
   font-weight: 600;
@@ -493,6 +512,10 @@ body {
   width: 200px;
   margin: 0 auto;
   margin-top: 2rem;
+}
+
+.reg-button:hover,.to-login:hover {
+  outline: 3px solid #ececec;
 }
 
 .tyuii-gaki1 {
