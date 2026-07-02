@@ -1,4 +1,5 @@
 node_modules/
 novels.db
 *.db
+.env
 note.txt

@@ -1,4 +1,4 @@
-# ノベルズ - 小説ブックマーク管理Webアプリ
+# マイノベルズ - 小説ブックマーク管理Webアプリ
 
 主にネット小説を管理するための、フルスタックWebアプリケーションです。
 ユーザー認証・CRUD操作・検索・フィルタリング機能を備えています。
@@ -63,7 +63,7 @@ node server.js
 
 ---
 
-# Novels - Light Novel Bookmark Manager
+# MyNovels - Light Novel Bookmark Manager
 
 A full-stack web application for managing light novel bookmarks, featuring user authentication, CRUD operations, search, and filtering.
 
