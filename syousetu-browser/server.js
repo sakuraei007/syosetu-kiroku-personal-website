@@ -10,7 +10,7 @@ app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 app.use(session({
-  secret: 'syousetu-browser-secret',
+  secret: process.env.SESSION_SEC,
   resave: false,
   saveUninitialized: false
 }));
@@ -49,7 +49,7 @@ async function renderNovelList(req, res, options = {}) {
     const lowerCaseKey = exclude.toLowerCase();
     novels = novels.filter(novel => !(
       novel.tags.toLowerCase().includes(lowerCaseKey) ||
-      novel.title.toLowerCase().includes(lowerCaseKey)
+      // novel.title.toLowerCase().includes(lowerCaseKey)
     ));
   }
 
@@ -147,6 +147,7 @@ app.post('/delete/:id', requireLogin, async (req, res) => {
 
 app.get('/edit/:id', requireLogin, async (req, res) => {
   const id = req.params.id;
+  const userID = req.session.userID;
   const result = await database.execute({
     sql: 'SELECT * FROM novels WHERE id = ?',
     args: [id]
